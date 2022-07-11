@@ -3,7 +3,8 @@ import { createConnection, getConnectionOptions } from "typeorm";
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
-import { HelloWorldResolver } from "./resolvers/HelloWorldResolver";
+import { ChannelResolver } from "./resolvers/ChannelResolver";
+import { MessageResolver } from "./resolvers/MessageResolver";
 
 (async () => {
   const app = express();
@@ -15,14 +16,14 @@ import { HelloWorldResolver } from "./resolvers/HelloWorldResolver";
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [HelloWorldResolver],
-      validate: true
+      resolvers: [ChannelResolver, MessageResolver],
+      validate: true,
     }),
-    context: ({ req, res }) => ({ req, res })
+    context: ({ req, res }) => ({ req, res }),
   });
 
   apolloServer.applyMiddleware({ app, cors: false });
-  const port = process.env.PORT || 4000;
+  const port = process.env.PORT || 3000;
   app.listen(port, () => {
     console.log(`server started at http://localhost:${port}/graphql`);
   });

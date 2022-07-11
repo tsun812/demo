@@ -5,6 +5,6 @@ export class Channel {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column("string", { default: "default channel", nullable: true })
+  @Column({ default: "default channel", nullable: true })
   name: string;
 }
