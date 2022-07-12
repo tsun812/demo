@@ -8,6 +8,7 @@
 - Apollo
 - Type ORM
 - SQLite
+- Jest
 
 ## Getting started
 
@@ -48,7 +49,7 @@ please head over to http://localhost:3000/graphql to execute your GraphQL query.
 
         channel(), fetch all channels
 
-  - Sub MessageResolver.ts: mutation and query for Message
+  - MessageResolver.ts: mutation and query for Message
 
         createMessage(title: string | undefined, content: string, channelId: number), create a new message belongs to a channel, returns true if succesfuly created, false if not.
 
