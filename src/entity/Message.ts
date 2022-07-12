@@ -1,19 +1,35 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  BaseEntity,
+  CreateDateColumn,
+} from "typeorm";
+import { Field, Int, ObjectType } from "type-graphql";
 import { Channel } from "./Channel";
 @Entity()
-export class Message {
+@ObjectType()
+export class Message extends BaseEntity {
+  @Field(() => Int)
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Field({ nullable: true })
   @Column({ nullable: true })
   title: string;
 
+  @Field()
   @Column()
   content: string;
 
-  @ManyToOne(() => Channel)
+  @ManyToOne(() => Channel, (channel) => channel.messages)
   channel: Channel;
 
-  @Column()
+  @Field({ nullable: true })
+  @CreateDateColumn({ nullable: true })
   createdAt: Date;
+
+  @Column({ type: "int", nullable: true })
+  channelId?: number | null;
 }
