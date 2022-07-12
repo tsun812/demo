@@ -33,7 +33,7 @@ please head over to http://localhost:3000/graphql to execute your GraphQL query.
 
 ## Project directory
 
-###src###
+### src
 
 - entity folder: defines models(DB schema, associations)
 
@@ -44,17 +44,17 @@ please head over to http://localhost:3000/graphql to execute your GraphQL query.
 
   - ChannelResolver.ts: mutaion and query for Channel
 
-    createChannel(name: string | undefined), create a new channel record in Channel table, returns true if succesfuly created, false if not.
+        createChannel(name: string | undefined), create a new channel record in Channel table, returns true if succesfuly created, false if not.
 
-    channel(), fetch all channels
+        channel(), fetch all channels
 
   - Sub MessageResolver.ts: mutation and query for Message
 
-    createMessage(title: string | undefined, content: string, channelId: number), create a new message belongs to a channel, returns true if succesfuly created, false if not.
+        createMessage(title: string | undefined, content: string, channelId: number), create a new message belongs to a channel, returns true if succesfuly created, false if not.
 
-    message(), fetch all messages
+        message(), fetch all messages
 
-    message(channelId: number), fetch all message belongs to a channel
+        message(channelId: number), fetch all message belongs to a channel
 
 - test-utils folder: connection to test DB, apollo server for test
 - util folder: defines helper function
