@@ -60,3 +60,12 @@ please head over to http://localhost:3000/graphql to execute your GraphQL query.
 - util folder: defines helper function
 - \_\_tests\_\_ folder: jest unit/integration test for resolver
 - index.ts: entry point to api server
+
+## GraphQL demo
+
+Create a new channel called demo1
+<img src="./docs/1.png" width="590" height="370"/></br>
+Created a new message with title = "hello", content = "world"
+<img src="./docs/2.png" width="590" height="370"/></br>
+Query content and date created for all messages belongs to channel id = 1
+<img src="./docs/3.png" width="590" height="370"/></br>
