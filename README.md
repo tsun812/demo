@@ -35,10 +35,10 @@ please head over to http://localhost:3000/graphql to execute your GraphQL query.
 
 - entity: defines models(DB schema, associations)
 
-  -- Channel.ts: Channel model{id: number, name: string}
-  -- Message.ts: Message model{id: number, title: string, content: string, createdAt: Date, channelId: number}
+      Channel.ts: Channel model{id: number, name: string}
+      Message.ts: Message model{id: number, title: string, content: string, createdAt: Date, channelId: number}
 
-- resolvers folder: defines resolvers for CRUD
+- resolvers: defines resolvers for CRUD
 
   ⋅⋅\* ChannelResolver.ts: mutaion and query for Channel
 
@@ -50,9 +50,9 @@ please head over to http://localhost:3000/graphql to execute your GraphQL query.
 
       createMessage(title: string | undefined, content: string, channelId: number), create a new message belongs to a channel, returns true if succesfuly created, false if not.
 
--- message(), fetch all messages
+      message(), fetch all messages
 
--- message(channelId: number), fetch all message belongs to a channel
+      message(channelId: number), fetch all message belongs to a channel
 
 - test-utils folder: defines resolvers for CRUD
 - util folder: defines resolvers for CRUD
